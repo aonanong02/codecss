@@ -230,49 +230,6 @@ body {
     box-shadow: 0 5px 20px rgba(0,0,0,0.04);
 }
 
-/* ส่วนแสดงแกลเลอรีรูปภาพ */
-.gallery-section {
-    margin-top: 35px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.gallery-item {
-    position: relative;
-    width: 100%;
-    padding-top: 100%; /* อัตราส่วน 1:1 */
-    border-radius: 18px;
-    overflow: hidden;
-    border: 3px solid white;
-    box-shadow: 0 5px 15px rgba(197,22,46,0.12);
-    background: #ffe5eb;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(197,22,46,0.25);
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
-}
-
 /* ปุ่ม */
 .button {
     display: inline-block;
@@ -315,10 +272,6 @@ footer {
 
     .info-grid {
         grid-template-columns: 1fr;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 </style>
@@ -374,22 +327,6 @@ footer {
             เว็บไซต์นี้จัดทำขึ้นเพื่อแนะนำข้อมูลส่วนตัว
             และประวัติการศึกษา
         </p>
-    </div>
-
-    <!-- ช่องแกลเลอรีรูปภาพ -->
-    <div class="gallery-section">
-        <h2 class="section-title" style="margin-top: 30px;">MY GALLERY</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="S__26992645.jpg" alt="รูปภาพ 1">
-            </div>
-            <div class="gallery-item">
-                <img src="S__26992645.jpg" alt="รูปภาพ 2">
-            </div>
-            <div class="gallery-item">
-                <img src="S__26992645.jpg" alt="รูปภาพ 3">
-            </div>
-        </div>
     </div>
 
     <a href="#" class="button">WELCOME TO MY PROFILE</a>
