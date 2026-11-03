@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -6,13 +7,7 @@
 <title>My Profile | ซีออนซ์</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap');
-
-:root {
-    --red: #c5162e;
-    --deep-red: #8f1023;
-    --pale-red: #fff1f2;
-}
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -20,148 +15,269 @@
     box-sizing: border-box;
 }
 
+:root {
+    --red: #d7193f;
+    --dark-red: #8f1029;
+    --pink: #ffe5eb;
+    --white: #ffffff;
+}
+
 body {
     font-family: 'Kanit', sans-serif;
-    background: linear-gradient(135deg, #fff0f1, #ffdce1, #fff7f7);
-    color: #302326;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 15px;
-}
-
-.container {
-    width: 100%;
-    max-width: 760px;
-    background: white;
-    border-radius: 26px;
-    overflow: hidden;
-    border: 1px solid #f2b8c0;
-    box-shadow: 0 18px 50px rgba(143,16,35,.18);
-}
-
-.header {
-    height: 16px;
+    color: #333;
     background: linear-gradient(
-        90deg,
-        #8f1023,
-        #c5162e,
-        #ed5367,
-        #c5162e
+        -45deg,
+        #fff0f2,
+        #ffffff,
+        #ffdce4,
+        #fff5f6
     );
+    background-size: 400% 400%;
+    animation: backgroundMove 12s ease infinite;
+    overflow-x: hidden;
 }
 
-.profile {
-    text-align: center;
-    padding: 40px 25px 25px;
-    background: linear-gradient(180deg, #fff0f2, #fff);
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-.tag {
-    display: inline-block;
-    background: var(--red);
-    color: white;
-    padding: 6px 19px;
+/* วงกลมตกแต่งพื้นหลัง */
+.circle {
+    position: fixed;
+    border-radius: 50%;
+    background: rgba(215, 25, 63, 0.08);
+    filter: blur(2px);
+    z-index: -1;
+    animation: float 7s ease-in-out infinite;
+}
+
+.circle.one {
+    width: 250px;
+    height: 250px;
+    top: 5%;
+    left: -80px;
+}
+
+.circle.two {
+    width: 180px;
+    height: 180px;
+    bottom: 5%;
+    right: -50px;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-35px); }
+}
+
+/* กล่องหลัก */
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: 65px auto;
+    padding: 45px 35px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.9);
     border-radius: 30px;
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-bottom: 22px;
+    box-shadow: 0 20px 60px rgba(143,16,41,0.12);
+    text-align: center;
+    animation: appear 1s ease;
 }
 
-.profile-img {
-    width: 195px;
-    height: 195px;
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* รูปโปรไฟล์ */
+.profile-frame {
+    width: 210px;
+    height: 210px;
+    margin: 0 auto 25px;
+    padding: 7px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff9aaa, #c5162e, #ffccd5);
+    box-shadow: 0 0 20px rgba(215,25,63,0.35);
+    animation: glow 3s ease-in-out infinite;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center 28%;
-    border: 7px solid white;
-    outline: 4px solid var(--red);
-    box-shadow: 0 8px 24px rgba(197,22,46,.25);
-    display: block;
-    margin: auto;
+    border: 5px solid white;
+    transition: transform 0.5s;
 }
 
-h1 {
-    margin-top: 24px;
-    font-size: clamp(26px, 5vw, 35px);
-    color: var(--deep-red);
-    font-weight: 600;
+.profile-frame:hover img {
+    transform: scale(1.08) rotate(3deg);
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(215,25,63,0.3);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(215,25,63,0.65);
+    }
+}
+
+/* ชื่อ */
+.name {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dark-red);
+    letter-spacing: 1px;
+    animation: slideDown 1s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .nickname {
-    color: #a34b58;
-    font-size: 17px;
-    margin-top: 5px;
+    display: inline-block;
+    margin-top: 8px;
+    padding: 7px 22px;
+    color: white;
+    background: linear-gradient(90deg, #c5162e, #ff718b);
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(197,22,46,0.2);
 }
 
+/* เส้นคั่น */
 .line {
-    width: 76px;
-    height: 5px;
-    background: var(--red);
-    margin: 25px auto 8px;
+    width: 90px;
+    height: 4px;
+    margin: 25px auto;
     border-radius: 10px;
+    background: linear-gradient(90deg, #ff9aaa, #c5162e);
 }
 
-.info {
-    padding: 24px 40px 38px;
-}
-
-.info h2 {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--red);
-    font-size: 21px;
+/* หัวข้อ */
+.section-title {
+    color: var(--dark-red);
+    font-size: 23px;
     margin-bottom: 20px;
 }
 
-.info h2::after {
-    content: "";
-    height: 2px;
-    flex: 1;
-    background: #f3b9c1;
+/* การ์ดข้อมูล */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.detail {
-    background: var(--pale-red);
-    padding: 15px 20px;
-    margin-bottom: 13px;
-    border-radius: 12px;
-    border: 1px solid #f5cbd0;
-    border-left: 6px solid var(--red);
+.info-card {
+    padding: 20px;
+    background: linear-gradient(135deg, #fff5f6, #ffe3e9);
+    border: 1px solid #ffd0da;
+    border-radius: 18px;
+    transition: all 0.35s ease;
+    animation: cardAppear 1s ease backwards;
 }
 
-.detail span {
-    color: #a34b58;
-    font-size: 12px;
-    letter-spacing: .4px;
+.info-card:nth-child(2) { animation-delay: .1s; }
+.info-card:nth-child(3) { animation-delay: .2s; }
+.info-card:nth-child(4) { animation-delay: .3s; }
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.detail p {
-    color: #3c252a;
+.info-card:hover {
+    transform: translateY(-8px);
+    background: white;
+    box-shadow: 0 12px 25px rgba(197,22,46,0.15);
+    border-color: var(--red);
+}
+
+.info-card h3 {
+    color: var(--red);
     font-size: 16px;
-    margin-top: 4px;
-    font-weight: 500;
+    margin-bottom: 8px;
 }
 
-.footer {
-    text-align: center;
-    padding: 19px;
-    background: var(--deep-red);
+.info-card p {
+    font-size: 17px;
+    color: #444;
+}
+
+/* แนะนำตัว */
+.about {
+    margin-top: 30px;
+    padding: 22px;
+    background: white;
+    border-left: 5px solid var(--red);
+    border-radius: 12px;
+    text-align: left;
+    line-height: 1.9;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+}
+
+/* ปุ่ม */
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
     color: white;
-    font-size: 12px;
-    letter-spacing: 2.5px;
+    text-decoration: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #a90f2d, #f04b69);
+    box-shadow: 0 7px 20px rgba(197,22,46,0.25);
+    transition: 0.3s;
 }
 
-@media (max-width: 500px) {
-    .info {
-        padding: 22px 22px 30px;
+.button:hover {
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 12px 25px rgba(197,22,46,0.35);
+}
+
+footer {
+    margin-top: 30px;
+    color: #a64b5e;
+    font-size: 13px;
+}
+
+/* มือถือ */
+@media (max-width: 600px) {
+    .container {
+        margin: 25px auto;
+        padding: 30px 18px;
     }
 
-    .profile-img {
-        width: 165px;
-        height: 165px;
+    .name {
+        font-size: 27px;
+    }
+
+    .profile-frame {
+        width: 170px;
+        height: 170px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
     }
 }
 </style>
@@ -169,72 +285,62 @@ h1 {
 
 <body>
 
-<main class="container">
+<div class="circle one"></div>
+<div class="circle two"></div>
 
-    <div class="header"></div>
+<div class="container">
 
-    <section class="profile">
+    <div class="profile-frame">
+        <img src="profile.jpg" alt="รูปโปรไฟล์">
+    </div>
 
-        <div class="tag">MY PROFILE</div>
+    <h1 class="name">อรอรงค์ บ้านหัวงิ้ว</h1>
+    <div class="nickname">ซีออนซ์</div>
 
-        <!-- รูปโปรไฟล์ฝังไว้ในไฟล์ HTML -->
-        <img
-            class="profile-img"
-            src="data:image/jpeg;base64,ใส่ข้อมูลรูปภาพ Base64 ตรงนี้"
-            alt="รูปโปรไฟล์ซีออนซ์"
-        >
+    <div class="line"></div>
 
-        <h1>อรอรงค์ บ้านหัวงิ้ว</h1>
+    <h2 class="section-title">MY PROFILE</h2>
 
-        <p class="nickname">
-            ชื่อเล่น : ซีออนซ์
-        </p>
+    <div class="info-grid">
 
-        <div class="line"></div>
-
-    </section>
-
-    <section class="info">
-
-        <h2>ABOUT ME</h2>
-
-        <div class="detail">
-            <span>NAME / ชื่อ-นามสกุล</span>
-            <p>อรอรงค์ บ้านหัวงิ้ว</p>
-        </div>
-
-        <div class="detail">
-            <span>NICKNAME / ชื่อเล่น</span>
-            <p>ซีออนซ์</p>
-        </div>
-
-        <div class="detail">
-            <span>AGE / อายุ</span>
+        <div class="info-card">
+            <h3>AGE</h3>
             <p>17 ปี</p>
         </div>
 
-        <div class="detail">
-            <span>SCHOOL / สถานศึกษา</span>
+        <div class="info-card">
+            <h3>SCHOOL</h3>
             <p>วิทยาลัยเทคนิคสิงห์บุรี</p>
         </div>
 
-        <div class="detail">
-            <span>DEPARTMENT / แผนกวิชา</span>
+        <div class="info-card">
+            <h3>DEPARTMENT</h3>
             <p>เทคโนโลยีสารสนเทศ</p>
         </div>
 
-        <div class="detail">
-            <span>CLASS / ระดับชั้น</span>
+        <div class="info-card">
+            <h3>CLASS</h3>
             <p>ปวช. 2/2</p>
         </div>
 
-    </section>
+    </div>
 
-    <footer class="footer">
-        WELCOME TO MY PROFILE
+    <div class="about">
+        <h3 style="color:#c5162e;">ABOUT ME</h3>
+        <p>
+            สวัสดี ยินดีต้อนรับเข้าสู่เว็บไซต์แนะนำตัวของฉัน
+            เว็บไซต์นี้จัดทำขึ้นเพื่อแนะนำข้อมูลส่วนตัว
+            และประวัติการศึกษา
+        </p>
+    </div>
+
+    <a href="#" class="button">WELCOME TO MY PROFILE</a>
+
+    <footer>
+        © 2026 MY PROFILE | DESIGNED BY ซีออนซ์
     </footer>
 
-</main>
+</div>
 
 </body>
 </html>
