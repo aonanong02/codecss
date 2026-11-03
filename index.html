@@ -9,156 +9,160 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap');
 
 :root {
-  --red: #c5162e;
-  --deep-red: #8f1023;
-  --soft-red: #ffe6e9;
-  --pale-red: #fff1f2;
+    --red: #c5162e;
+    --deep-red: #8f1023;
+    --pale-red: #fff1f2;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Kanit', sans-serif;
-  background: linear-gradient(135deg, #fff0f1, #ffdce1, #fff7f7);
-  color: #302326;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 15px;
+    font-family: 'Kanit', sans-serif;
+    background: linear-gradient(135deg, #fff0f1, #ffdce1, #fff7f7);
+    color: #302326;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
 }
 
 .container {
-  width: 100%;
-  max-width: 760px;
-  background: white;
-  border-radius: 26px;
-  overflow: hidden;
-  border: 1px solid #f2b8c0;
-  box-shadow: 0 18px 50px rgba(143,16,35,.18);
+    width: 100%;
+    max-width: 760px;
+    background: white;
+    border-radius: 26px;
+    overflow: hidden;
+    border: 1px solid #f2b8c0;
+    box-shadow: 0 18px 50px rgba(143,16,35,.18);
 }
 
 .header {
-  height: 16px;
-  background: linear-gradient(90deg,
-    #8f1023, #c5162e, #ed5367, #c5162e);
+    height: 16px;
+    background: linear-gradient(
+        90deg,
+        #8f1023,
+        #c5162e,
+        #ed5367,
+        #c5162e
+    );
 }
 
 .profile {
-  text-align: center;
-  padding: 40px 25px 25px;
-  background: linear-gradient(180deg, #fff0f2, #fff);
+    text-align: center;
+    padding: 40px 25px 25px;
+    background: linear-gradient(180deg, #fff0f2, #fff);
 }
 
 .tag {
-  display: inline-block;
-  background: var(--red);
-  color: white;
-  padding: 6px 19px;
-  border-radius: 30px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-bottom: 22px;
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    padding: 6px 19px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
 }
 
 .profile-img {
-  width: 195px;
-  height: 195px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center 28%;
-  border: 7px solid white;
-  outline: 4px solid var(--red);
-  box-shadow: 0 8px 24px rgba(197,22,46,.25);
-  display: block;
-  margin: auto;
+    width: 195px;
+    height: 195px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 28%;
+    border: 7px solid white;
+    outline: 4px solid var(--red);
+    box-shadow: 0 8px 24px rgba(197,22,46,.25);
+    display: block;
+    margin: auto;
 }
 
 h1 {
-  margin-top: 24px;
-  font-size: clamp(26px, 5vw, 35px);
-  color: var(--deep-red);
-  font-weight: 600;
+    margin-top: 24px;
+    font-size: clamp(26px, 5vw, 35px);
+    color: var(--deep-red);
+    font-weight: 600;
 }
 
 .nickname {
-  color: #a34b58;
-  font-size: 17px;
-  margin-top: 5px;
+    color: #a34b58;
+    font-size: 17px;
+    margin-top: 5px;
 }
 
 .line {
-  width: 76px;
-  height: 5px;
-  background: var(--red);
-  margin: 25px auto 8px;
-  border-radius: 10px;
+    width: 76px;
+    height: 5px;
+    background: var(--red);
+    margin: 25px auto 8px;
+    border-radius: 10px;
 }
 
 .info {
-  padding: 24px 40px 38px;
+    padding: 24px 40px 38px;
 }
 
 .info h2 {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--red);
-  font-size: 21px;
-  margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--red);
+    font-size: 21px;
+    margin-bottom: 20px;
 }
 
-.info h2:after {
-  content: "";
-  height: 2px;
-  flex: 1;
-  background: #f3b9c1;
+.info h2::after {
+    content: "";
+    height: 2px;
+    flex: 1;
+    background: #f3b9c1;
 }
 
 .detail {
-  background: var(--pale-red);
-  padding: 15px 20px;
-  margin-bottom: 13px;
-  border-radius: 12px;
-  border: 1px solid #f5cbd0;
-  border-left: 6px solid var(--red);
+    background: var(--pale-red);
+    padding: 15px 20px;
+    margin-bottom: 13px;
+    border-radius: 12px;
+    border: 1px solid #f5cbd0;
+    border-left: 6px solid var(--red);
 }
 
 .detail span {
-  color: #a34b58;
-  font-size: 12px;
-  letter-spacing: .4px;
+    color: #a34b58;
+    font-size: 12px;
+    letter-spacing: .4px;
 }
 
 .detail p {
-  color: #3c252a;
-  font-size: 16px;
-  margin-top: 4px;
-  font-weight: 500;
+    color: #3c252a;
+    font-size: 16px;
+    margin-top: 4px;
+    font-weight: 500;
 }
 
 .footer {
-  text-align: center;
-  padding: 19px;
-  background: var(--deep-red);
-  color: white;
-  font-size: 12px;
-  letter-spacing: 2.5px;
+    text-align: center;
+    padding: 19px;
+    background: var(--deep-red);
+    color: white;
+    font-size: 12px;
+    letter-spacing: 2.5px;
 }
 
-@media(max-width:500px) {
-  .info {
-    padding: 22px 22px 30px;
-  }
+@media (max-width: 500px) {
+    .info {
+        padding: 22px 22px 30px;
+    }
 
-  .profile-img {
-    width: 165px;
-    height: 165px;
-  }
+    .profile-img {
+        width: 165px;
+        height: 165px;
+    }
 }
 </style>
 </head>
@@ -167,67 +171,68 @@ h1 {
 
 <main class="container">
 
-  <div class="header"></div>
+    <div class="header"></div>
 
-  <section class="profile">
+    <section class="profile">
 
-    <div class="tag">MY PROFILE</div>
+        <div class="tag">MY PROFILE</div>
 
-    <img
-      class="profile-img"
-      src="profile.jpg"
-      alt="รูปโปรไฟล์ซีออนซ์"
-    >
+        <!-- รูปโปรไฟล์ฝังไว้ในไฟล์ HTML -->
+        <img
+            class="profile-img"
+            src="data:image/jpeg;base64,ใส่ข้อมูลรูปภาพ Base64 ตรงนี้"
+            alt="รูปโปรไฟล์ซีออนซ์"
+        >
 
-    <h1>อรอรงค์ บ้านหัวงิ้ว</h1>
+        <h1>อรอรงค์ บ้านหัวงิ้ว</h1>
 
-    <p class="nickname">
-      ชื่อเล่น : ซีออนซ์
-    </p>
+        <p class="nickname">
+            ชื่อเล่น : ซีออนซ์
+        </p>
 
-    <div class="line"></div>
+        <div class="line"></div>
 
-  </section>
+    </section>
 
-  <section class="info">
+    <section class="info">
 
-    <h2>ABOUT ME</h2>
+        <h2>ABOUT ME</h2>
 
-    <div class="detail">
-      <span>NAME / ชื่อ-นามสกุล</span>
-      <p>อรอรงค์ บ้านหัวงิ้ว</p>
-    </div>
+        <div class="detail">
+            <span>NAME / ชื่อ-นามสกุล</span>
+            <p>อรอรงค์ บ้านหัวงิ้ว</p>
+        </div>
 
-    <div class="detail">
-      <span>NICKNAME / ชื่อเล่น</span>
-      <p>ซีออนซ์</p>
-    </div>
+        <div class="detail">
+            <span>NICKNAME / ชื่อเล่น</span>
+            <p>ซีออนซ์</p>
+        </div>
 
-    <div class="detail">
-      <span>AGE / อายุ</span>
-      <p>17 ปี</p>
-    </div>
+        <div class="detail">
+            <span>AGE / อายุ</span>
+            <p>17 ปี</p>
+        </div>
 
-    <div class="detail">
-      <span>SCHOOL / สถานศึกษา</span>
-      <p>วิทยาลัยเทคนิคสิงห์บุรี</p>
-    </div>
+        <div class="detail">
+            <span>SCHOOL / สถานศึกษา</span>
+            <p>วิทยาลัยเทคนิคสิงห์บุรี</p>
+        </div>
 
-    <div class="detail">
-      <span>DEPARTMENT / แผนกวิชา</span>
-      <p>เทคโนโลยีสารสนเทศ</p>
-    </div>
+        <div class="detail">
+            <span>DEPARTMENT / แผนกวิชา</span>
+            <p>เทคโนโลยีสารสนเทศ</p>
+        </div>
 
-    <div class="detail">
-      <span>CLASS / ระดับชั้น</span>
-      <p>ปวช. 2/2</p>
-    </div>
+        <div class="detail">
+            <span>CLASS / ระดับชั้น</span>
+            <p>ปวช. 2/2</p>
+        </div>
 
-  </section>
+    </section>
 
-  <footer class="footer">
-    WELCOME TO MY PROFILE
-  </footer>
+    <footer class="footer">
+        WELCOME TO MY PROFILE
+    </footer>
 
 </main>
 
